@@ -4,7 +4,35 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <h1>FlashCard</h1>
+      <div class="nav-conatiner">
+        <nav>
+          <ul>
+            <li>
+              <a href="default.asp">Register</a>
+            </li>
+            <li>
+              <a href="news.asp">LogIn</a>
+            </li>
+            <li>
+              <a href="contact.asp">Contact</a>
+            </li>
+            <li>
+              <a href="about.asp">About</a>
+            </li>
+            <li>
+              <h1>FlashCard</h1>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="grid-container">
+          <div class="item1"></div>
+          <div class="item2"></div>
+          <div class="item3">Main</div>
+          <div class="item4">Right</div>
+          <div class="item5">Footer</div>
+        </div>
+      </div>
     </div>
   );
 }
