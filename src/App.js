@@ -60,6 +60,28 @@ function App() {
         </div>
       </div>
     </div>
+
+    /*<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyApLGBjABs8n-4pQD1SmGArIBNJem_wVcU",
+    authDomain: "flashcard-6c43d.firebaseapp.com",
+    databaseURL: "https://flashcard-6c43d.firebaseio.com",
+    projectId: "flashcard-6c43d",
+    storageBucket: "flashcard-6c43d.appspot.com",
+    messagingSenderId: "362798135144",
+    appId: "1:362798135144:web:8b8884570d955c736a08dd"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+*/
   );
 }
 
