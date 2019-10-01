@@ -1,6 +1,7 @@
 import "./App.css";
 import React from "react";
 import firebase from "firebase";
+/*import SignIn from "./components/auth/signIn";*/
 
 function App() {
 	const firebaseConfig = {
@@ -31,9 +32,7 @@ function App() {
 		<div className="App">
 			<nav class="light-blue lighten-1" role="navigation">
 				<div class="nav-wrapper container">
-					<a id="logo-container" href="#" class="brand-logo">
-						Logo
-					</a>
+					<a id="logo-container" href="./src/img/flashcard_logo_NEU.png" class="brand-logo"></a>
 					<ul class="right hide-on-med-and-down">
 						<li>
 							<a href="#">Navbar Link</a>
@@ -54,7 +53,7 @@ function App() {
 				<div class="container">
 					<h1 class="header center orange-text">flashcard</h1>
 					<div class="row center">
-						<h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+						<h5 class="header col s12 light">Lernen mit virtuellen Kartekarten</h5>
 					</div>
 					<div class="row center">
 						<a
@@ -73,6 +72,8 @@ function App() {
 						>
 							Sign up
 						</a>
+
+						<div class="row"></div>
 					</div>
 				</div>
 			</div>
@@ -83,7 +84,7 @@ function App() {
 						<div class="col s12 m4">
 							<div class="icon-block">
 								<h2 class="center light-blue-text">
-									<i class="material-icons">flash_on</i>
+									<i class="material-icons">schneller...</i>
 								</h2>
 								<h5 class="center">Speeds up development</h5>
 
@@ -98,7 +99,7 @@ function App() {
 						<div class="col s12 m4">
 							<div class="icon-block">
 								<h2 class="center light-blue-text">
-									<i class="material-icons">group</i>
+									<i class="material-icons">einfacher...</i>
 								</h2>
 								<h5 class="center">User Experience Focused</h5>
 
@@ -113,9 +114,9 @@ function App() {
 						<div class="col s12 m4">
 							<div class="icon-block">
 								<h2 class="center light-blue-text">
-									<i class="material-icons">settings</i>
+									<i class="material-icons">nachhaltiger...</i>
 								</h2>
-								<h5 class="center">Easy to work with</h5>
+								<h5 class="center">Sparen Sie Zeit und Papier</h5>
 
 								<p class="light">
 									We have provided detailed documentation as well as specific code examples to help new users get
