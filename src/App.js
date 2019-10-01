@@ -2,18 +2,17 @@ import React from 'react';
 import firebase from 'firebase';
 import './App.css';
 
-const firebaseConfig = {
-  apiKey: '-R351WSFX0sq6g',
-  authDomain: '.firebaseapp.com',
-  databaseURL: '.firebaseio.com',
-  projectId: 'periodictable-af684',
-  storageBucket: 'periodictable-af684.appspot.com',
-  messagingSenderId: '821428636191',
-  appId: '1:821428636191:web:11908fe1afd384429b632a',
-  measurementId: 'G-2Y1BN0FZXG'
-};
-
 function App() {
+  const firebaseConfig = {
+    apiKey: 'AIzaSyApLGBjABs8n-4pQD1SmGArIBNJem_wVcU',
+    authDomain: 'flashcard-6c43d.firebaseapp.com',
+    databaseURL: 'https://flashcard-6c43d.firebaseio.com',
+    projectId: 'flashcard-6c43d',
+    storageBucket: 'flashcard-6c43d.appspot.com',
+    messagingSenderId: '362798135144',
+    appId: '1:362798135144:web:8b8884570d955c736a08dd'
+  };
+
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   console.log(firebase);
@@ -60,28 +59,6 @@ function App() {
         </div>
       </div>
     </div>
-
-    /*<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyApLGBjABs8n-4pQD1SmGArIBNJem_wVcU",
-    authDomain: "flashcard-6c43d.firebaseapp.com",
-    databaseURL: "https://flashcard-6c43d.firebaseio.com",
-    projectId: "flashcard-6c43d",
-    storageBucket: "flashcard-6c43d.appspot.com",
-    messagingSenderId: "362798135144",
-    appId: "1:362798135144:web:8b8884570d955c736a08dd"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
-*/
   );
 }
 
