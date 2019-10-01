@@ -1,7 +1,33 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import firebase from 'firebase';
+import './App.css';
+
+const firebaseConfig = {
+  apiKey: '-R351WSFX0sq6g',
+  authDomain: '.firebaseapp.com',
+  databaseURL: '.firebaseio.com',
+  projectId: 'periodictable-af684',
+  storageBucket: 'periodictable-af684.appspot.com',
+  messagingSenderId: '821428636191',
+  appId: '1:821428636191:web:11908fe1afd384429b632a',
+  measurementId: 'G-2Y1BN0FZXG'
+};
 
 function App() {
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  console.log(firebase);
+
+  const database = firebase.firestore();
+  database
+    .collection('PeriodicTableOfElements')
+    .get()
+    .then(snapshot => {
+      snapshot.docs.forEach(doc => {
+        console.log(doc.data());
+      });
+    });
+
   return (
     <div className="App">
       <div class="nav-conatiner">
