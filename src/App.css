@@ -1,71 +1,8 @@
-.App {
-  text-align: center;
-}
-.item1 {
-  grid-area: header;
-}
-.item2 {
-  grid-area: menu;
-}
-.item3 {
-  grid-area: main;
-}
-.item4 {
-  grid-area: right;
-}
-.item5 {
-  grid-area: footer;
-}
+/* navigation style start*/
 
-.grid-container {
-  display: grid;
-  grid-template-areas:
-    "header header header header header header"
-    "menu main main main right right"
-    "menu footer footer footer footer footer";
-  grid-gap: 10px;
-  background-color: none;
-  padding: 10px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.grid-container div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
-}
-
-.item1 {
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: left;
-}
-
-h1 {
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: left;
-  margin-left: +650px;
-  font-size: 40px;
-  margin-top: -20px;
-  display: flex;
-}
-
-nav {
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: normal;
-}
-nav > ul {
-  list-style-type: none;
-  display: flex;
-}
-
-nav > ul > li {
-  padding: 2rem;
-}
-
-nav > ul > li > a {
-  display: flex;
-  justify-content: center;
-  align-content: left;
+.header {
+  text-align: end;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
 }
