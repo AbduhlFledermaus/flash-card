@@ -22,16 +22,15 @@ function App() {
   console.log(firebase);
 
   const database = firebase.firestore();
-  /*
+
   database
-    .collection("PeriodicTableOfElements")
+    .collection("user")
     .get()
     .then(snapshot => {
       snapshot.docs.forEach(doc => {
         console.log(doc.data());
       });
-	});
-	*/
+    });
 
   /*const useStyles = makeStyles(theme => ({
     button: {
