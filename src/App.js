@@ -62,12 +62,21 @@ function App() {
         </div>
 
         <div>
-          <Card className="App-card">
-            <CardContent>Word of the Day</CardContent>
-            <CardActions>
-              <Button size="small">Learn More</Button>
-            </CardActions>
-          </Card>
+          <h5>
+            {" "}
+            "Beginnen Sie jetzt mit den Online Karteikarten zu lernen! <br></br>
+            sparen sie papier und Zeit<br></br> Verzeichnen sie sofortige
+            lernerfolge"{" "}
+          </h5>
+
+          <div className="App-button-container">
+            <div className="App-button">
+              <Button variant="contained">Anmelden</Button>
+            </div>
+            <div className="App-button">
+              <Button variant="contained">Registrieren</Button>
+            </div>
+          </div>
         </div>
       </body>
     </div>
