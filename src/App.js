@@ -17,6 +17,8 @@ function App() {
     appId: "1:362798135144:web:8b8884570d955c736a08dd"
   };
 
+  /*
+
   /**
    * this is the firebase connection.
    *
