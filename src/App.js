@@ -1,8 +1,8 @@
 import React from "react";
 import firebase from "firebase";
 import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
+/*import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";*/
 import Button from "@material-ui/core/Button";
 import "./App.css";
 
@@ -17,6 +17,10 @@ function App() {
     appId: "1:362798135144:web:8b8884570d955c736a08dd"
   };
 
+  /**
+   * this is the firebase connection.
+   *
+   */
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   console.log(firebase);
