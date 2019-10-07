@@ -10,7 +10,7 @@ import About from "./About";
 function Routes() {
   return (
     <Switch>
-      <Route exact path="/" component={Main} />
+      <Route exact path="/home" component={home} />
       <Redirect to="/" />
     </Switch>
   );

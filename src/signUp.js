@@ -6,7 +6,7 @@ import CardContent from "@material-ui/core/CardContent";*/
 import Button from "@material-ui/core/Button";
 import "./App.css";
 
-function App() {
+function signUp() {
   const firebaseConfig = {
     apiKey: "AIzaSyApLGBjABs8n-4pQD1SmGArIBNJem_wVcU",
     authDomain: "flashcard-6c43d.firebaseapp.com",
@@ -67,12 +67,7 @@ function App() {
         </div>
 
         <div>
-          <h5>
-            {" "}
-            "Beginnen Sie jetzt mit den Online Karteikarten zu lernen! <br></br>
-            sparen sie papier und Zeit<br></br> Verzeichnen sie sofortige
-            lernerfolge"{" "}
-          </h5>
+          <h5>test test test</h5>
 
           <div className="App-button-container">
             <div className="App-button">
@@ -110,4 +105,4 @@ function App() {
   );
 }
 
-export default App;
+export default signUp;
