@@ -6,11 +6,7 @@ function EasterEgg() {
     window.location.assign('https://i.redd.it/fn0eq16ttlp31.png');
   };
 
-  return (
-    <div>
-      <Konami action={easterEggToggle} />
-    </div>
-  );
+  return <Konami action={easterEggToggle} />;
 }
 
 export default EasterEgg;

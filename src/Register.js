@@ -28,6 +28,7 @@ function Register() {
         <DialogContent>
           <DialogContentText>Registrieren Sie sich noch heute und erhalten Sie 3 Geld</DialogContentText>
           <TextField autoFocus margin="dense" id="name" label="Email Address" type="email" fullWidth />
+          <TextField margin="dense" id="name" label="Passwort" type="password" fullWidth />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
