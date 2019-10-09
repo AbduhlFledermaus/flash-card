@@ -1,11 +1,11 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
+import React from "react";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
 
 function Login() {
   const [open, setOpen] = React.useState(false);
@@ -23,19 +23,38 @@ function Login() {
       <Button variant="outlined" color="primary" onClick={handleClickOpen}>
         Anmelden
       </Button>
-      <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="form-dialog-title"
+      >
         <DialogTitle id="form-dialog-title">Anmelden</DialogTitle>
         <DialogContent>
-          <DialogContentText>Melden Sie sich jetzt an und erhalten Sie 1 Geld</DialogContentText>
-          <TextField autoFocus margin="dense" id="name" label="Email Address" type="email" fullWidth />
-          <TextField margin="dense" id="name" label="Passwort" type="password" fullWidth />
+          <DialogContentText>
+            Geben Sie Ihre Zugangsdaten ein.
+          </DialogContentText>
+          <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label="Email Address"
+            type="email"
+            fullWidth
+          />
+          <TextField
+            margin="dense"
+            id="name"
+            label="Passwort"
+            type="password"
+            fullWidth
+          />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
-            Cancel
+            Anmelden
           </Button>
           <Button onClick={handleClose} color="primary">
-            Subscribe
+            Abbrechen
           </Button>
         </DialogActions>
       </Dialog>
