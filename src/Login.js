@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
@@ -6,9 +7,13 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import firebase from "firebase";
 
-function Login() {
+function Login(props) {
   const [open, setOpen] = React.useState(false);
+
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -18,48 +23,67 @@ function Login() {
     setOpen(false);
   };
 
+  const handleRegister = e => {
+    e.preventDefault();
+    if (password.length >= 5) {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password)
+        .then(data => {
+          console.log(data);
+          props.history.push("/welcome");
+        });
+      handleClose();
+    }
+  };
+
   return (
     <div>
       <Button variant="outlined" color="primary" onClick={handleClickOpen}>
         Anmelden
       </Button>
+
       <Dialog
         open={open}
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
       >
         <DialogTitle id="form-dialog-title">Anmelden</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            Geben Sie Ihre Zugangsdaten ein.
-          </DialogContentText>
-          <TextField
-            autoFocus
-            margin="dense"
-            id="name"
-            label="Email Address"
-            type="email"
-            fullWidth
-          />
-          <TextField
-            margin="dense"
-            id="name"
-            label="Passwort"
-            type="password"
-            fullWidth
-          />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            Anmelden
-          </Button>
-          <Button onClick={handleClose} color="primary">
-            Abbrechen
-          </Button>
-        </DialogActions>
+        <form onSubmit={e => handleRegister(e)}>
+          <DialogContent>
+            <DialogContentText>
+              Geben Sie bitte Ihre Daten ein.
+            </DialogContentText>
+
+            <TextField
+              margin="dense"
+              id="email"
+              label="Email Address"
+              type="email"
+              onChange={e => setEmail(e.target.value)}
+              fullWidth
+              required
+            />
+            <TextField
+              margin="dense"
+              id="password"
+              label="Passwort"
+              onChange={e => setPassword(e.target.value)}
+              type="password"
+              fullWidth
+              required
+            />
+          </DialogContent>
+          <DialogActions>
+            <input type="submit"></input>
+            <Button onClick={handleClose} color="primary">
+              Abbrechen
+            </Button>
+          </DialogActions>
+        </form>
       </Dialog>
     </div>
   );
 }
 
-export default Login;
+export default withRouter(Login);

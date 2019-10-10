@@ -1,0 +1,49 @@
+.card {
+  width: 600px;
+  margin: 10px;
+  height: 350px;
+  position: relative;
+  background-color: none;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  font-family: "Patrick Hand", cursive;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.4);
+  .card-face {
+    position: absolute;
+    width: 100%;
+    backface-visibility: hidden;
+    height: 100%;
+  }
+  .card-face-front {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
+    justify-content: flex-start;
+    background-color: white;
+    padding: 1em;
+    font-size: 30px;
+
+    .edit {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+  .card-face-back {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 30px;
+    padding: 1em;
+    background-color: white;
+  }
+}
+.card.is-flipped {
+  transform: rotateY(180deg);
+  background: transparent;
+  box-shadow: -2px 5px 10px rgba(0, 0, 0, 0.4);
+}

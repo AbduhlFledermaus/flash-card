@@ -49,10 +49,9 @@ function Register(props) {
               console.log(data);
               console.log(data.id);
             });
+          props.history.push("/welcome");
         });
-
       handleClose();
-      props.history.push("/welcome");
     }
   };
 
