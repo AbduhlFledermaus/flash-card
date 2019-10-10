@@ -1,10 +1,10 @@
-import React from 'react';
-export const initialState = { loggedIn: false };
+import React from "react";
+export const initialState = { user: {} };
 
 export const reducer = (state, action) => {
   switch (action.type) {
-    case 'setLoggedIn':
-      return { ...state, loggedIn: action.value };
+    case "setUser":
+      return { ...state, user: action.value };
     default:
       return state;
   }

@@ -1,7 +1,7 @@
 import React from "react";
 import firebase from "firebase";
 import EasterEgg from "./EasterEgg";
-import Landing from "./Landing";
+import Routes from "./Routes";
 import "./App.css";
 
 function App() {
@@ -19,8 +19,8 @@ function App() {
 
   return (
     <div className="App">
+      <Routes />
       <EasterEgg />
-      <Landing />
     </div>
   );
 }

@@ -1,16 +1,13 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import Search from "./Search";
-import History from "./history/History";
-import Stats from "./stats/Stats";
-import Login from "./auth/Login";
-import Logout from "./auth/Logout";
-import About from "./About";
+import Landing from "./Landing";
+import Welcome from "./Welcome";
 
 function Routes() {
   return (
     <Switch>
-      <Route exact path="/home" component={home} />
+      <Route exact path="/" component={Landing} />
+      <Route exact path="/welcome" component={Welcome} />
       <Redirect to="/" />
     </Switch>
   );

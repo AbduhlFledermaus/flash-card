@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
@@ -9,12 +10,14 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import firebase from "firebase";
 import { isNullOrUndefined } from "util";
 
-function Register() {
+function Register(props) {
   const [open, setOpen] = React.useState(false);
 
   const [email, setEmail] = React.useState("");
   const [password1, setPassword1] = React.useState("");
   const [password2, setPassword2] = React.useState("");
+  const [firstName, setFirstName] = React.useState("");
+  const [lastName, setLastName] = React.useState("");
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -24,8 +27,8 @@ function Register() {
     setOpen(false);
   };
 
-  const handleRegister = () => {
-    console.log("Hoden");
+  const handleRegister = e => {
+    e.preventDefault();
     if (
       !isNullOrUndefined(password2) &&
       !isNullOrUndefined(password1) &&
@@ -38,7 +41,18 @@ function Register() {
         .createUserWithEmailAndPassword(email, password1)
         .then(a => {
           console.log(a);
+          firebase
+            .firestore()
+            .collection("user")
+            .add({ email: email, firstName: firstName, lastName: lastName })
+            .then(data => {
+              console.log(data);
+              console.log(data.id);
+            });
         });
+
+      handleClose();
+      props.history.push("/welcome");
     }
   };
 
@@ -54,15 +68,18 @@ function Register() {
         aria-labelledby="form-dialog-title"
       >
         <DialogTitle id="form-dialog-title">Registrieren</DialogTitle>
-        <DialogContent>
-          <DialogContentText>Geben Sie bitte Ihre Daten ein.</DialogContentText>
+        <form onSubmit={e => handleRegister(e)}>
+          <DialogContent>
+            <DialogContentText>
+              Geben Sie bitte Ihre Daten ein.
+            </DialogContentText>
 
-          <form>
             <TextField
               autoFocus
               margin="dense"
               id="vorname"
               label="Vorname"
+              onChange={e => setFirstName(e.target.value)}
               type="text"
               fullWidth
             />
@@ -71,6 +88,7 @@ function Register() {
               margin="dense"
               id="Nachname"
               label="Nachname"
+              onChange={e => setLastName(e.target.value)}
               type="text"
               fullWidth
               required
@@ -104,20 +122,17 @@ function Register() {
               fullWidth
               required
             />
-          </form>
-        </DialogContent>
-        <DialogActions>
-          <input type="submit"></input>
-          <Button onClick={handleRegister} color="primary">
-            Registrieren
-          </Button>
-          <Button onClick={handleClose} color="primary">
-            Abbrechen
-          </Button>
-        </DialogActions>
+          </DialogContent>
+          <DialogActions>
+            <input type="submit"></input>
+            <Button onClick={handleClose} color="primary">
+              Abbrechen
+            </Button>
+          </DialogActions>
+        </form>
       </Dialog>
     </div>
   );
 }
 
-export default Register;
+export default withRouter(Register);
