@@ -7,13 +7,14 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import firebase from "firebase";
+import { isNullOrUndefined } from "util";
 
 function Register() {
   const [open, setOpen] = React.useState(false);
 
-  const [email, setEmail] = React.useState(false);
-  const [password1, setPassword1] = React.useState(false);
-  const [password2, setPassword2] = React.useState(false);
+  const [email, setEmail] = React.useState("");
+  const [password1, setPassword1] = React.useState("");
+  const [password2, setPassword2] = React.useState("");
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -24,13 +25,20 @@ function Register() {
   };
 
   const handleRegister = () => {
+    console.log("Hoden");
     if (
-      password1 &&
-      password2 &&
-      password1.lenght > 5 &&
+      !isNullOrUndefined(password2) &&
+      !isNullOrUndefined(password1) &&
+      password1.length >= 5 &&
       password2 === password1
     ) {
-      firebase.auth.Register();
+      console.log("here");
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, password1)
+        .then(a => {
+          console.log(a);
+        });
     }
   };
 
@@ -39,6 +47,7 @@ function Register() {
       <Button variant="outlined" color="primary" onClick={handleClickOpen}>
         Registrieren
       </Button>
+
       <Dialog
         open={open}
         onClose={handleClose}
@@ -48,50 +57,57 @@ function Register() {
         <DialogContent>
           <DialogContentText>Geben Sie bitte Ihre Daten ein.</DialogContentText>
 
-          <TextField
-            autoFocus
-            margin="dense"
-            id="vorname"
-            label="Vorname"
-            type="text"
-            fullWidth
-          />
+          <form>
+            <TextField
+              autoFocus
+              margin="dense"
+              id="vorname"
+              label="Vorname"
+              type="text"
+              fullWidth
+            />
 
-          <TextField
-            margin="dense"
-            id="Nachname"
-            label="Nachname"
-            type="text"
-            fullWidth
-          />
+            <TextField
+              margin="dense"
+              id="Nachname"
+              label="Nachname"
+              type="text"
+              fullWidth
+              required
+            />
 
-          <TextField
-            margin="dense"
-            id="email"
-            label="Email Address"
-            type="email"
-            onChange={e => setEmail(e.target.value)}
-            fullWidth
-          />
-          <TextField
-            margin="dense"
-            id="password1"
-            label="Passwort"
-            onChange={e => setPassword1(e.target.value)}
-            type="password"
-            fullWidth
-          />
+            <TextField
+              margin="dense"
+              id="email"
+              label="Email Address"
+              type="email"
+              onChange={e => setEmail(e.target.value)}
+              fullWidth
+              required
+            />
+            <TextField
+              margin="dense"
+              id="password1"
+              label="Passwort"
+              onChange={e => setPassword1(e.target.value)}
+              type="password"
+              fullWidth
+              required
+            />
 
-          <TextField
-            margin="dense"
-            id="password2"
-            label="Passwort"
-            onChange={e => setPassword2(e.target.value)}
-            type="password"
-            fullWidth
-          />
+            <TextField
+              margin="dense"
+              id="password2"
+              label="Passwort"
+              onChange={e => setPassword2(e.target.value)}
+              type="password"
+              fullWidth
+              required
+            />
+          </form>
         </DialogContent>
         <DialogActions>
+          <input type="submit"></input>
           <Button onClick={handleRegister} color="primary">
             Registrieren
           </Button>
