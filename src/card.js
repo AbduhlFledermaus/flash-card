@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/card.css";
+import "./card.css";
 
 const Card = ({ card, flipCard, flipped }) => (
   <div className={flipped ? "card is-flipped" : "card"} onClick={flipCard}>

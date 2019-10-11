@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/cardform.css";
+import "./cardform.css";
 
 class CardForm extends React.Component {
   // Handle Form Submit

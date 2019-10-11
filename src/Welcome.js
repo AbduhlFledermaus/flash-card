@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import CardForm from "./cardform.js";
-import "./styles/welcome.css";
+import "./welcome.css";
 import CardList from "./cardlist.js";
 
-class Welcome extends React.Component() {
+export class Welcome extends Component {
   state = {
     cards: [],
     menuOpen: false,
