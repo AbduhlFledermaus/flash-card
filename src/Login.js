@@ -11,7 +11,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import firebase from "firebase";
 
 function Login(props) {
-  const { dispatch } = useContext(Context);
+  const { store, dispatch } = useContext(Context);
   const [open, setOpen] = React.useState(false);
 
   const [email, setEmail] = React.useState("");
@@ -48,8 +48,9 @@ function Login(props) {
                   id: d.docs[0].id
                 }
               });
+
+              props.history.push(`/welcome${d.docs[0].id}`);
             });
-          props.history.push("/welcome");
         });
       handleClose();
     }

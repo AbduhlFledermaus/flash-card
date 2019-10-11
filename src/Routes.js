@@ -7,7 +7,7 @@ function Routes() {
   return (
     <Switch>
       <Route exact path="/" component={Landing} />
-      <Route exact path="/welcome" component={Welcome} />
+      <Route exact path="/welcome:id" component={Welcome} />
       <Redirect to="/" />
     </Switch>
   );

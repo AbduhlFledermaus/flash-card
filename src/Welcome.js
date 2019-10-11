@@ -16,7 +16,24 @@ export class Welcome extends Component {
   };
 
   init = () => {
-    // firebase.firestore().collection("user/" +  +  "/" + "cards");
+    firebase
+      .firestore()
+      .collection("user/" + this.props.match.params.id + "/" + "cards")
+      .get()
+      .then(d => {
+        d.forEach(card => {
+          let c = {
+            id: card.id,
+            front: card.data().front,
+            back: card.data().back,
+            correct: false
+          };
+          console.log(card);
+          console.log(card.data());
+          this.state.cards.push(c);
+        });
+        //let card = { id: d.id, front, back, correct: false };
+      });
   };
 
   resetFormInputs = () => {
@@ -61,6 +78,13 @@ export class Welcome extends Component {
   // DELETE A SINGLE CARD
   deleteCard = id => {
     let { cards } = this.state;
+    firebase
+      .firestore()
+      .collection("user/" + this.props.match.params.id + "/" + "cards")
+      .doc(id)
+      .delete()
+      .then(d => console.log(d));
+
     this.setState({
       cards: cards.filter(card => {
         return card.id !== id;
@@ -79,6 +103,14 @@ export class Welcome extends Component {
   createCard = (front, back) => {
     let { cards } = this.state;
     let card = { id: this.getId(), front, back, correct: false };
+    firebase
+      .firestore()
+      .collection("user/" + this.props.match.params.id + "/" + "cards")
+      .add({ front: front, back: back })
+      .then(data => {
+        console.log(data);
+        card.id = data.id;
+      });
     this.setState({
       cards: [...cards, card]
     });
@@ -138,6 +170,7 @@ export class Welcome extends Component {
       editing,
       menuOpen
     } = this.state;
+    this.init();
     return (
       <>
         {menuOpen ? (
