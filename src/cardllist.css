@@ -1,114 +1,118 @@
 @import url("https://fonts.googleapis.com/css?family=Patrick+Hand");
-
-@mixin flex {
+.card-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.card-container .left-arrow {
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.card-container .left-arrow svg {
+  height: 50px;
+  width: 50px;
+  fill: rgba(0, 0, 0, 0.6);
+}
+.card-container .left-arrow:hover > svg {
+  fill: #ff6b81;
+}
+.card-container .right-arrow {
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.card-container .right-arrow svg {
+  height: 50px;
+  width: 50px;
+  fill: rgba(0, 0, 0, 0.6);
+}
+.card-container .right-arrow:hover > svg {
+  fill: #ff6b81;
+}
+.card-container .fake-card {
+  width: 600px;
+  margin: 10px;
+  height: 350px;
+  position: relative;
+  background-color: white;
+  border-radius: 5px;
+  background-color: none;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  font-size: 30px;
+  font-family: "Patrick Hand", cursive;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-
-.card-container {
-  height: 100%;
-  width: 100%;
-  @include flex;
-  flex-direction: row;
-
-  .left-arrow {
-    background-color: rgba(255, 255, 255, 0.2);
-    @include flex;
-    border-radius: 5px;
-    cursor: pointer;
-    svg {
-      height: 50px;
-      width: 50px;
-      fill: rgba(0, 0, 0, 0.6);
-    }
-    &:hover > svg {
-      fill: #ff6b81;
-    }
-  }
-
-  .right-arrow {
-    background-color: rgba(255, 255, 255, 0.2);
-    @include flex;
-    cursor: pointer;
-    border-radius: 5px;
-    svg {
-      height: 50px;
-      width: 50px;
-      fill: rgba(0, 0, 0, 0.6);
-    }
-    &:hover > svg {
-      fill: #ff6b81;
-    }
-  }
-
-  .fake-card {
-    width: 600px;
-    margin: 10px;
-    height: 350px;
-    position: relative;
-    background-color: white;
-    border-radius: 5px;
-    background-color: none;
-    transition: transform 1s;
-    transform-style: preserve-3d;
-    font-size: 30px;
-    font-family: "Patrick Hand", cursive;
-    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.4);
-    @include flex;
-
-    .btn {
-      padding: 10px 20px;
-      -webkit-appearance: button;
-      background-color: #2f3542;
-      color: white;
-      font-weight: bold;
-      border-radius: 5px;
-      outline: none;
-      border: 2px solid #ff6b81;
-      cursor: pointer;
-      font-size: 16px;
-      margin: 10px;
-      box-shadow: 2px 5px 12px rgba(0, 0, 0, 0.2);
-    }
-  }
+.card-container .fake-card .btn {
+  padding: 10px 20px;
+  -webkit-appearance: button;
+  background-color: #2f3542;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid #ff6b81;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+  box-shadow: 2px 5px 12px rgba(0, 0, 0, 0.2);
 }
-
 .extra-buttons {
   width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-
-  .edit {
-    @include flex;
-    padding: 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.3);
-    svg {
-      width: 15px;
-      height: 15px;
-    }
-    &:hover > svg {
-      fill: #ff6b81;
-    }
-  }
-  .delete {
-    @include flex;
-    padding: 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    margin-left: 10px;
-    background-color: rgba(255, 255, 255, 0.3);
-    svg {
-      width: 15px;
-      height: 15px;
-    }
-    &:hover > svg {
-      fill: #ff6b81;
-    }
-  }
+}
+.extra-buttons .edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.extra-buttons .edit svg {
+  width: 15px;
+  height: 15px;
+}
+.extra-buttons .edit:hover > svg {
+  fill: #ff6b81;
+}
+.extra-buttons .delete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.extra-buttons .delete svg {
+  width: 15px;
+  height: 15px;
+}
+.extra-buttons .delete:hover > svg {
+  fill: #ff6b81;
 }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import CardForm from "./cardform.js";
 import "./welcome.css";
 import CardList from "./cardlist.js";
+import firebase from "firebase";
 
 export class Welcome extends Component {
   state = {
@@ -12,6 +13,10 @@ export class Welcome extends Component {
     editing: false,
     front: "",
     back: ""
+  };
+
+  init = () => {
+    // firebase.firestore().collection("user/" +  +  "/" + "cards");
   };
 
   resetFormInputs = () => {

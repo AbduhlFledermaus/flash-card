@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import { Context } from "./store";
 import { withRouter } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -11,7 +12,9 @@ import firebase from "firebase";
 import { isNullOrUndefined } from "util";
 
 function Register(props) {
-  const [open, setOpen] = React.useState(false);
+  const { dispatch } = useContext(Context);
+
+  const [open, setOpen] = useState(false);
 
   const [email, setEmail] = React.useState("");
   const [password1, setPassword1] = React.useState("");
@@ -46,9 +49,17 @@ function Register(props) {
             .collection("user")
             .add({ email: email, firstName: firstName, lastName: lastName })
             .then(data => {
-              console.log(data);
-              console.log(data.id);
+              dispatch({
+                type: "setUser",
+                value: {
+                  email: email,
+                  firstName: firstName,
+                  lastName: lastName,
+                  id: data.id
+                }
+              });
             });
+
           props.history.push("/welcome");
         });
       handleClose();

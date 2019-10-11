@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useReducer } from "react";
+import { Context, initialState, reducer } from "./store";
+
 import firebase from "firebase";
 import EasterEgg from "./EasterEgg";
 import Routes from "./Routes";
@@ -15,13 +17,19 @@ function App() {
     appId: "1:362798135144:web:8b8884570d955c736a08dd"
   };
 
-  firebase.initializeApp(firebaseConfig);
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }
+
+  const [store, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <div className="App">
-      <Routes />
-      <EasterEgg />
-    </div>
+    <Context.Provider value={{ store, dispatch }}>
+      <div className="App">
+        <Routes />
+        <EasterEgg />
+      </div>
+    </Context.Provider>
   );
 }
 
