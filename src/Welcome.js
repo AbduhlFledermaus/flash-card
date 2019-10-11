@@ -4,6 +4,7 @@ import "./welcome.css";
 import CardList from "./cardlist.js";
 import firebase from "firebase";
 
+// Welcome
 export class Welcome extends Component {
   state = {
     cards: [],
@@ -160,6 +161,7 @@ export class Welcome extends Component {
     });
   };
 
+  // Render
   render() {
     let {
       cards,
