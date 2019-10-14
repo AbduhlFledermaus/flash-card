@@ -72,6 +72,14 @@ export class Welcome extends Component {
 
   // DELETE ALL CARDS FROM ARRAY
   deleteCards = () => {
+    this.state.cards.forEach(c => {
+      firebase
+        .firestore()
+        .collection("user/" + this.props.match.params.id + "/" + "cards")
+        .doc(c.id)
+        .delete()
+        .then(d => console.log(d));
+    });
     this.setState({
       cards: []
     });
