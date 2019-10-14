@@ -121,7 +121,15 @@ export class Welcome extends Component {
   // EDIT CARD IN ARRAY
   editCard = cardData => {
     const cards = this.state.cards.map(card => {
-      if (card.id === cardData.id) return cardData;
+      if (card.id === cardData.id) {
+        firebase
+          .firestore()
+          .collection("user/" + this.props.match.params.id + "/" + "cards")
+          .doc(cardData.id)
+          .update(cardData)
+          .then();
+        return cardData;
+      }
       return card;
     });
     this.setState({ cards: cards });
