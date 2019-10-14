@@ -16,12 +16,13 @@ export class Welcome extends Component {
     back: ""
   };
 
-  init = () => {
-    firebase
+  init = async () => {
+    await firebase
       .firestore()
       .collection("user/" + this.props.match.params.id + "/" + "cards")
       .get()
       .then(d => {
+        let cds = [];
         d.forEach(card => {
           let c = {
             id: card.id,
@@ -29,10 +30,10 @@ export class Welcome extends Component {
             back: card.data().back,
             correct: false
           };
-          console.log(card);
-          console.log(card.data());
-          this.state.cards.push(c);
+          cds.push(c);
         });
+        //this.state.cards = cds;
+        this.setState({ cards: [...cds] });
         //let card = { id: d.id, front, back, correct: false };
       });
   };
