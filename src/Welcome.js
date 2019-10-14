@@ -237,6 +237,14 @@ export class Welcome extends Component {
           <button className="btn" onClick={this.deleteCards}>
             Delete All Cards
           </button>
+          <button
+            className="btn"
+            onClick={() => {
+              this.props.history.push("/logout");
+            }}
+          >
+            Logout
+          </button>
         </div>
         <CardList
           cards={cards}
