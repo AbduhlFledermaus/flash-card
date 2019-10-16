@@ -8,6 +8,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import Snackbar from "@material-ui/core/Snackbar";
 import firebase from "firebase";
 import { isNullOrUndefined } from "util";
 
@@ -21,6 +22,7 @@ function Register(props) {
   const [password2, setPassword2] = React.useState("");
   const [firstName, setFirstName] = React.useState("");
   const [lastName, setLastName] = React.useState("");
+  const [snack, setSnack] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -59,8 +61,11 @@ function Register(props) {
                 }
               });
             });
-
-          props.history.push("/welcome");
+          setSnack(true);
+          console.log("SnackBar");
+          if (snack) {
+            props.history.push("/welcome");
+          }
         });
       handleClose();
     }
@@ -141,6 +146,18 @@ function Register(props) {
           </DialogActions>
         </form>
       </Dialog>
+      <Snackbar
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "left"
+        }}
+        open={snack}
+        autoHideDuration={3}
+        ContentProps={{
+          "aria-describedby": "message-id"
+        }}
+        message={<span id="message-id">Erfolgreich registriert =)</span>}
+      />
     </div>
   );
 }

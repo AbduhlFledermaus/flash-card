@@ -1,6 +1,11 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "./store";
 
+/**
+ * Logout
+ *
+ * @param {*} props
+ */
 function Logout(props) {
   const { store, dispatch } = useContext(Context);
 
@@ -10,7 +15,7 @@ function Logout(props) {
         type: "setUser",
         value: {}
       }),
-    []
+    [dispatch]
   );
 
   return (

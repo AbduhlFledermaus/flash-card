@@ -68,7 +68,7 @@ body .container .btn {
 }
 body .container .btn:hover {
   background-color: rgba(0, 0, 0, 0.8);
-  color: #ff6b81;
+  color: #;
 }
 @keyframes fadeIn {
   0% {
