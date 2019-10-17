@@ -23,7 +23,7 @@
   fill: rgba(0, 0, 0, 0.6);
 }
 .card-container .left-arrow:hover > svg {
-  fill: #ff6b81;
+  fill: #1976d2;
 }
 .card-container .right-arrow {
   background-color: rgba(255, 255, 255, 0.2);
@@ -40,7 +40,7 @@
   fill: rgba(0, 0, 0, 0.6);
 }
 .card-container .right-arrow:hover > svg {
-  fill: #ff6b81;
+  fill: #1976d2;
 }
 .card-container .fake-card {
   width: 600px;
@@ -68,7 +68,7 @@
   font-weight: bold;
   border-radius: 5px;
   outline: none;
-  border: 2px solid #ff6b81;
+  border: 2px solid #1976d2;
   cursor: pointer;
   font-size: 16px;
   margin: 10px;
@@ -96,7 +96,7 @@
   height: 15px;
 }
 .extra-buttons .edit:hover > svg {
-  fill: #ff6b81;
+  fill: #1976d2;
 }
 .extra-buttons .delete {
   display: flex;
@@ -114,5 +114,5 @@
   height: 15px;
 }
 .extra-buttons .delete:hover > svg {
-  fill: #ff6b81;
+  fill: #1976d2;
 }

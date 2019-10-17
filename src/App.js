@@ -7,6 +7,11 @@ import Routes from "./Routes";
 import "./App.css";
 
 function App() {
+  /**
+   * firebase configuration and keys
+   *
+   */
+
   const firebaseConfig = {
     apiKey: "AIzaSyApLGBjABs8n-4pQD1SmGArIBNJem_wVcU",
     authDomain: "flashcard-6c43d.firebaseapp.com",

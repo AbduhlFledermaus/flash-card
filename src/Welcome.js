@@ -232,10 +232,10 @@ export class Welcome extends Component {
         ) : null}
         <div className="container">
           <button className="btn" onClick={this.toggleMenu}>
-            Add Card
+            Karte hinzufügen
           </button>
           <button className="btn" onClick={this.deleteCards}>
-            Delete All Cards
+            Alle Karten verwerfen
           </button>
           <button
             className="btn"
@@ -243,7 +243,7 @@ export class Welcome extends Component {
               this.props.history.push("/logout");
             }}
           >
-            Logout
+            Abmelden
           </button>
         </div>
         <CardList

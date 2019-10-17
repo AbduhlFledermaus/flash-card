@@ -44,7 +44,7 @@ body .overlay .close-menu {
   border-radius: 50%;
 }
 body .overlay .close-menu:hover {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: #1976d2;
 }
 body .container {
   max-width: 1200px;
@@ -67,8 +67,8 @@ body .container .btn {
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
 }
 body .container .btn:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #;
+  background-color: #1976d2;
+  color: #ffffff;
 }
 @keyframes fadeIn {
   0% {

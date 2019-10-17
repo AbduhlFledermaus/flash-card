@@ -4,6 +4,9 @@ import Landing from "./Landing";
 import Welcome from "./Welcome";
 import Logout from "./Logout";
 
+/**
+ * Routing to components
+ */
 function Routes() {
   return (
     <Switch>

@@ -30,9 +30,9 @@ const CardList = ({
           <Card card={cardShown[0]} flipCard={flipCard} flipped={flipped} />
         ) : (
           <div className="fake-card">
-            Add cards to the deck...
+            Fügen Sie Karten zu Ihrem Deck hinzu...
             <button onClick={toggle} className="btn">
-              Add Card
+              Hinzufügen
             </button>
           </div>
         )}

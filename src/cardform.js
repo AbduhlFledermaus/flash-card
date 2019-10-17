@@ -32,7 +32,7 @@ class CardForm extends React.Component {
     return (
       <form className="card-form" onSubmit={this.handleSubmit}>
         <textarea
-          placeholder="Question:"
+          placeholder="Frage:"
           autoFocus
           name="front"
           value={front}
@@ -41,14 +41,14 @@ class CardForm extends React.Component {
           onChange={handleChange}
         />
         <textarea
-          placeholder="Answer:"
+          placeholder="Antwort:"
           name="back"
           value={back}
           onChange={handleChange}
           className="input"
           required
         />
-        <input type="submit" value="Submit" className="submit" />
+        <input type="submit" value="Absenden" className="submit" />
       </form>
     );
   }

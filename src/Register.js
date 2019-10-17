@@ -12,6 +12,13 @@ import Snackbar from "@material-ui/core/Snackbar";
 import firebase from "firebase";
 import { isNullOrUndefined } from "util";
 
+/**write registrations into firebase
+ *
+ * @param {props} props
+ * @constant handleClickOpen
+ * @constant handleRegister
+ *
+ */
 function Register(props) {
   const { dispatch } = useContext(Context);
 
