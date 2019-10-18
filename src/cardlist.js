@@ -2,6 +2,10 @@ import React from "react";
 import Card from "./card.js";
 import "./cardllist.css";
 
+/**
+ * navigation trough list of cards, deletion and editing, allwows the user to display the cards
+ */
+
 const CardList = ({
   cards,
   increase,

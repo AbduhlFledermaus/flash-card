@@ -3,7 +3,11 @@ import Login from "./Login";
 import Register from "./Register";
 import "./Landing.css";
 
-function Landing(props) {
+/**
+ * Runs the landing page that allows the user to login or register
+ */
+
+function Landing() {
   return (
     <div className="Landing">
       <h1>FLASHCARD</h1>

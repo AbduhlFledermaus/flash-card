@@ -10,6 +10,12 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import firebase from "firebase";
 
+/**
+ * log into firebase database, sign in with email and password,
+ * check if user exists, if yes open the card game
+ * @param {*} props
+ */
+
 function Login(props) {
   const { store, dispatch } = useContext(Context);
   const [open, setOpen] = React.useState(false);

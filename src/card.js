@@ -2,8 +2,10 @@ import React from "react";
 import "./card.css";
 
 /**
- *
- * @param {*} param0
+ * returning card
+ * @param card
+ * @param flipCard
+ * @param flipped
  */
 
 const Card = ({ card, flipCard, flipped }) => (

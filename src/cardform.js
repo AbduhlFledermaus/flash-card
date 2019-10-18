@@ -1,6 +1,10 @@
 import React from "react";
 import "./cardform.css";
 
+/**
+ * Renders cardforms, front and back, editing cards
+ *
+ */
 class CardForm extends React.Component {
   // Handle Form Submit
   handleSubmit = e => {
