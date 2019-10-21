@@ -6,7 +6,7 @@ import Login from "./Login";
 import Register from "./Register";
 
 /**
- * Logout
+ * Logging out user
  *
  * @param {*} props
  */
